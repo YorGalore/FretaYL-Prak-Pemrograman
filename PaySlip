@@ -15,13 +15,13 @@ int main() {
     int insurance = 0.06*salary;
     int net_salary = salary - tax - installment - insurance;
     
-    cout << "\nPlayslip for YorGalore Employee" << endl;
+    cout << "\nPayslip for YorGalore Employee" << endl;
     cout << "-------------------------------" << endl;
     cout << "Name: " << nama << endl;
     cout << "Gross Salary: Rp " << salary << endl;
     cout << "Tax (20%):Rp " << tax << endl;
     cout << "Installment: Rp " << installment << endl;
-    cout << "Insulance: Rp " << insurance << endl;
+    cout << "Insurance: Rp " << insurance << endl;
     cout << "Net Salary: " << net_salary << endl;
     
     return 0;  
