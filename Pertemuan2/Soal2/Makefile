@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -std=c++11
 
 TARGET = program
 
-SRC = quadraticequations
+SRC = quadraticequations.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
