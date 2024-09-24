@@ -1,18 +1,11 @@
-CXX = g++
+nilaibesar:  nilaibesar.o
+  g++  nilaibesar.o  -o  nilaibesar
 
-CXXFLAGS = -Wall -std=c++11
+nilaibesar.o:  nilaibesar.cpp
+g++  -c  nilaibesar.cpp  -o  nilaibesar.o
 
-TARGET = program
-
-SRC = nilaibesar.cpp
-
-OBJ = $(SRC:.cpp=.o)
-
-$(TARGET): $(OBJ)
-  $(CXX) $(CXXFLAGS) -o $@ $^
-
-%.o: %.cpp
-  $(CXX) $(CXXFLAGS) -c $< -o $@
+run:  nilaibesar
+  ./nilaibesar
 
 clean:
-  rm -f $(OBJ) $(TARGET)
+  rm  -f  nilaibesar.o  nilaibesar
