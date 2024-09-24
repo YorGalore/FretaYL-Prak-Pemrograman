@@ -1,18 +1,11 @@
-CXX = g++
+quadraticequations: quadraticequations.o
+  g++  quadraticequations  .o  -o  quadraticequations
 
-CXXFLAGS = -Wall -std=c++11
+quadraticequations.o: quadraticequations.cpp
+  g++  -c  quadraticequations.cpp  -o  quadraticequations.o
 
-TARGET = program
-
-SRC = quadraticequations.cpp
-
-OBJ = $(SRC:.cpp=.o)
-
-$(TARGET): $(OBJ)
-  $(CXX) $(CXXFLAGS) -o $@ $^
-
-%.o: %.cpp
-  $(CXX) $(CXXFLAGS) -c $< -o $@
+run:  quadraticequations
+  ./quadraticequations
 
 clean:
-  rm -f $(OBJ) $(TARGET)
+  rm  -f  quadraticequations.o  quadraticequations
