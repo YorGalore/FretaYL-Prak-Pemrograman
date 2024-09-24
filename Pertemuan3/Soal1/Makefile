@@ -1,18 +1,11 @@
-CXX = g++
+nilaideterminan:  nilaideterminan.o
+  g++ nilaideterminan .o  -o  PaySlip
 
-CXXFLAGS = -Wall -std=c++11
+PaySlip.o:  nilaideterminan.cpp
+  g++  -c  nilaideterminan.cpp  -o   nilaideterminan.o
 
-TARGET = program
-
-SRC = nilaideterminan.cpp
-
-OBJ = $(SRC:.cpp=.o)
-
-$(TARGET): $(OBJ)
-  $(CXX) $(CXXFLAGS) -o $@ $^
-
-%.o: %.cpp
-  $(CXX) $(CXXFLAGS) -c $< -o $@
+run:  nilaideterminan
+  ./nilaideterminan
 
 clean:
-  rm -f $(OBJ) $(TARGET)
+  rm  -f  nilaideterminan.o  nilaideterminan
