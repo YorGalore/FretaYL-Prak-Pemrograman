@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -std=c++11
 
 TARGET = program
 
-SRC = nilaideterminan
+SRC = nilaideterminan.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
