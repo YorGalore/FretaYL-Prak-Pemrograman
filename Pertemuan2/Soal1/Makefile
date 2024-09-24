@@ -1,18 +1,11 @@
-CXX = g++
+PaySlip: PaySlip.o
+  g++ PaySlip .o  -o  PaySlip
 
-CXXFLAGS = -Wall -std=c++11
+PaySlip.o: PaySlip.cpp
+  g++ -c  PaySlip.cpp -o  PaySlip.o
 
-TARGET = program
-
-SRC = PaySlip.cpp
-
-OBJ = $(SRC:.cpp=.o)
-
-$(TARGET): $(OBJ)
-  $(CXX) $(CXXFLAGS) -o $@ $^
-
-%.o: %.cpp
-  $(CXX) $(CXXFLAGS) -c $< -o $@
+run: PaySlip
+  ./PaySlip
 
 clean:
-  rm -f $(OBJ) $(TARGET)
+  rm  -f  PaySlip.o  PaySlip
