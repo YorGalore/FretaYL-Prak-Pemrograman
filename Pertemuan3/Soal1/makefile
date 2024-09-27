@@ -1,28 +1,23 @@
-
 # Variables
 CXX = g++
-CXXFLAGS = -Wall  -g
-TARGET = quadraticequations
-SRCS = quadraticequations.cpp
-
-#Define the object files
-OBJS = $(SRCS:.cpp=.o)
+CXXFLAGS = -Wall
+TARGET = nilaideterminan
+SRC = nilaideterminan.cpp
 
 # Default target: compile the program
 all: $(TARGET)
 
-# Compile the quadraticequations.cpp
-$(TARGET): $(OBJS)
+# Compile the nilaideterminan.cpp
+$(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
-#compile source files into object files
-%.o: %.cpp
-  $(CXX) $(CXXFLAGS) -c $< -o $@
-
+# Run the program in test mode (using test.txt)
+test: $(TARGET)
+	./$(TARGET) test
 
 # Clean up the compiled files
 clean:
-  del $(TARGET_DEL) $(OBJS)
+	rm -f $(TARGET)
 
 # Phony targets to avoid conflicts
-.PHONY: all clean
+.PHONY: all clean test
