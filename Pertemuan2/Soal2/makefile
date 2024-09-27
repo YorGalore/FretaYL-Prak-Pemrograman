@@ -1,4 +1,3 @@
-
 # Variables
 CXX = g++
 CXXFLAGS = -Wall
