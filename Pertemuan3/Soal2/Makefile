@@ -1,11 +1,23 @@
-nilaibesar:  nilaibesar.o
-  g++  nilaibesar.o  -o  nilaibesar
+# Variables
+CXX = g++
+CXXFLAGS = -Wall
+TARGET = nilaibesar
+SRC = nilaibesar.cpp
 
-nilaibesar.o:  nilaibesar.cpp
-g++  -c  nilaibesar.cpp  -o  nilaibesar.o
+# Default target: compile the program
+all: $(TARGET)
 
-run:  nilaibesar
-  ./nilaibesar
+# Compile the nilaibesar.cpp
+$(TARGET): $(SRC)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
 
+# Run the program in test mode (using test.txt)
+test: $(TARGET)
+	./$(TARGET) test
+
+# Clean up the compiled files
 clean:
-  rm  -f  nilaibesar.o  nilaibesar
+	rm -f $(TARGET)
+
+# Phony targets to avoid conflicts
+.PHONY: all clean test
