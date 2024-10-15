@@ -8,7 +8,7 @@ SRC = fizzbuzz.cpp
 all: fizzbuzz
 
 # Compile the fizzbuzz.cpp
-jmlbil: fizzbuzz.cpp
+fizzbuzz: fizzbuzz.cpp
 	g++ -Wall -o fizzbuzz fizzbuzz.cpp
 
 # Run the program in test mode (using test.txt)
