@@ -5,19 +5,19 @@ TARGET = PaySlip
 SRC = PaySlip.cpp
 
 # Default target: compile the program
-all: $(TARGET)
+all: PaySlip
 
-# Compile the PaySlip.cpp
-$(TARGET): $(SRC)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
+# Compile the PlaySlip.cpp
+PaySlip: PlaySlip.cpp
+	g++ -Wall -o PaySlip PlaySlip.cpp
 
 # Run the program in test mode (using test.txt)
-test: $(TARGET)
-	./$(TARGET) test
+test: PlaySlip
+	./PlaySlip test
 
 # Clean up the compiled files
 clean:
-	rm -f $(TARGET)
+	rm -f PlaySlip
 
 # Phony targets to avoid conflicts
 .PHONY: all clean test
