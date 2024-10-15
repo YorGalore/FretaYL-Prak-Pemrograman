@@ -1,0 +1,47 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+// Function to generate FizzBuzz results and store them in a vector
+    vector<string> generateFizzBuzz(int start, int end) {
+    vector<string> fizzBuzzList;
+
+    for (int i = start; i <= end; ++i) {
+        string result;
+
+        // Check for multiples of 3
+        if (i % 3 == 0) {
+            result += "Fizz";
+        }
+
+        // Check for multiples of 5
+        if (i % 5 == 0) {
+            result += "Buzz";
+        }
+
+        // If not a multiple of 3 or 5, store the number as a string
+        if (result.empty()) {
+            result = to_string(i);
+        }
+
+        fizzBuzzList.push_back(result);
+    }
+
+    return fizzBuzzList;
+}
+
+int main() {
+    const int START = 1;
+    const int END = 100;
+
+    // Generate FizzBuzz list
+    vector<string> fizzBuzz = generateFizzBuzz(START, END);
+
+    // Output the results
+    for (const auto& entry : fizzBuzz) {
+        cout << entry << endl;
+    }
+
+    return 0;
+}
