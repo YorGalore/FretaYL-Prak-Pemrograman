@@ -7,8 +7,8 @@ SRC = nilaideterminan.cpp
 # Default target: compile the program
 all: nilaideterminan
 
-# Compile the jmlbil.cpp
-jmlbil: nilaideterminan.cpp
+# Compile the nilaideterminan.cpp
+nilaideterminan: nilaideterminan.cpp
 	g++ -Wall -o nilaideterminan nilaideterminan.cpp
 
 # Run the program in test mode (using test.txt)
