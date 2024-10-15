@@ -5,19 +5,19 @@ TARGET = nilaibesar
 SRC = nilaibesar.cpp
 
 # Default target: compile the program
-all: $(TARGET)
+all: nilaibesar
 
 # Compile the nilaibesar.cpp
-$(TARGET): $(SRC)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
+jmlbil: nilaibesar.cpp
+	g++ -Wall -o nilaibesar nilaibesar.cpp
 
 # Run the program in test mode (using test.txt)
-test: $(TARGET)
-	./$(TARGET) test
+test: nilaibesar
+	./nilaibesar test
 
 # Clean up the compiled files
 clean:
-	rm -f $(TARGET)
+	rm -f nilaibesar
 
 # Phony targets to avoid conflicts
 .PHONY: all clean test
