@@ -5,19 +5,19 @@ TARGET = nilaideterminan
 SRC = nilaideterminan.cpp
 
 # Default target: compile the program
-all: $(TARGET)
+all: nilaideterminan
 
-# Compile the nilaideterminan.cpp
-$(TARGET): $(SRC)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
+# Compile the jmlbil.cpp
+jmlbil: nilaideterminan.cpp
+	g++ -Wall -o nilaideterminan nilaideterminan.cpp
 
 # Run the program in test mode (using test.txt)
-test: $(TARGET)
-	./$(TARGET) test
+test: nilaideterminan
+	./nilaideterminan test
 
 # Clean up the compiled files
 clean:
-	rm -f $(TARGET)
+	rm -f nilaideterminan
 
 # Phony targets to avoid conflicts
 .PHONY: all clean test
