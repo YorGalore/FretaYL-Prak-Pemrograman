@@ -5,19 +5,19 @@ TARGET = quadraticequations
 SRC = quadraticequations.cpp
 
 # Default target: compile the program
-all: $(TARGET)
+all: quadraticequations
 
 # Compile the quadraticequations.cpp
-$(TARGET): $(SRC)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
+nilaideterminan: quadraticequations.cpp
+	g++ -Wall -o quadraticequations quadraticequations.cpp
 
 # Run the program in test mode (using test.txt)
-test: $(TARGET)
-	./$(TARGET) test
+test: quadraticequations
+	./quadraticequations test
 
 # Clean up the compiled files
 clean:
-	rm -f $(TARGET)
+	rm -f quadraticequations
 
 # Phony targets to avoid conflicts
 .PHONY: all clean test
