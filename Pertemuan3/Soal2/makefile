@@ -8,7 +8,7 @@ SRC = nilaibesar.cpp
 all: nilaibesar
 
 # Compile the nilaibesar.cpp
-jmlbil: nilaibesar.cpp
+nilaibesar: nilaibesar.cpp
 	g++ -Wall -o nilaibesar nilaibesar.cpp
 
 # Run the program in test mode (using test.txt)
