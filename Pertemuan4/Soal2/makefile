@@ -5,19 +5,19 @@ TARGET = perkalian
 SRC = perkalian.cpp
 
 # Default target: compile the program
-all: $(TARGET)
+all: perkalian
 
-# Compile the perkalian.cpp
-$(TARGET): $(SRC)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
+# Compile the jmlbil.cpp
+jmlbil: perkalian.cpp
+	g++ -Wall -o perkalian perkalian.cpp
 
 # Run the program in test mode (using test.txt)
-test: $(TARGET)
-	./$(TARGET) test
+test: perkalian
+	./perkalian test
 
 # Clean up the compiled files
 clean:
-	rm -f $(TARGET)
+	rm -f perkalian
 
 # Phony targets to avoid conflicts
 .PHONY: all clean test
