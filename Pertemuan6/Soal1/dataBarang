@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Barang {
+    string kode, nama;
+    double harga;
+    int jumlah;
+};
+
+int main() {
+    const int MAX_BARANG = 50;
+    Barang barang[MAX_BARANG];
+    int n;
+    
+    cout << "Masukkan jumlah barang (maksimal 50): ";
+    cin >> n;
+    
+    if(n > MAX_BARANG || n <= 0) {
+        cout << "Jumlah melebihi kapasitas." << endl;
+        return 1;
+    }
+    
+    for(int i = 0; i < n; i++) {
+        cout << "\nMasukkan data barang ke-" << i+1 << endl;
+        cout << "Kode Barang: ";
+        cin >> barang[i].kode;
+        cin.ignore();
+        cout << "Nama Barang: ";
+        getline(cin, barang[i].nama);
+        cout << "Harga Barang: ";
+        cin >> barang[i].harga;
+        cout << "Jumlah Barang: ";
+        cin >> barang[i].jumlah;
+    }
+    
+    int totalJumlah = 0;
+    double totalHarga = 0;
+    
+    for(int i = 0; i < n; i++) {
+        totalJumlah += barang[i].jumlah;
+        totalHarga += barang[i].harga;
+    }   
+    double rataRataHarga = totalHarga / n;
+    cout << "\nTotal jumlah semua barang: " << totalJumlah << endl;
+    cout << "Rata-rata harga barang: " << rataRataHarga << endl;
+    
+    return 0;
+}
