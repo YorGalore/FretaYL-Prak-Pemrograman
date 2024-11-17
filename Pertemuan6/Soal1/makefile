@@ -8,7 +8,7 @@ SRC = dataBarang.cpp
 all: dataBarang
 
 # Compile the dataBarang.cpp
-fizzbuzz: fizzbuzz.cpp
+dataBarang: dataBarang.cpp
 	g++ -Wall -o dataBarang dataBarang.cpp
 
 # Run the program in test mode (using test.txt)
