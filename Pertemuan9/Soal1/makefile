@@ -1,21 +1,23 @@
 #Variables
 CXX = g++
 CXXFLAGS = -Wall
-TARGET = Soal1
-SRC = Soal1.cpp
-OBJS = $(SRC:.cpp=.exe)
+TARGET = sortingNisn
+SRC = sortingNisn.cpp
 
-all: $(TARGET)
+#Default target: compile the program
+all: sortingNisn
 
-$(TARGET): $(SRC)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
+#Compile the sortingNisn.cpp
+sortingNisn: sortingNisn.cpp
+	g++ -Wall -o sortingNisn sortingNisn.cpp
 
-run: $(TARGET)
-	./$(TARGET) Soal1
+#Run the program in test mode (using test.txt)
+test: sortingNisn
+	./sortingNisn test
 
-#Clean up build artifacts
+# Clean up the compiled files
 clean:
-	del $(TARGET_DEL) $(OBJS)
+	rm -f sortingNisn
 
-#Phony targets
-.PHONY: all clean
+# Phony targets to avoid conflicts
+.PHONY: all clean test
