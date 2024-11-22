@@ -83,6 +83,11 @@ int main() {
     };
 
     int n = sizeof(data) / sizeof(data[0]);
+    
+    Siswa data1[n], data2[n], data3[n];
+    copy(data, data + n, data1);
+    copy(data, data + n, data2);
+    copy(data, data + n, data3);
     int index = binarySearch(data1, n, targetNISN); // Menggunakan data1 (sudah terurut)
     if (index != -1) {
         cout << "\nData dengan NISN " << targetNISN << " ditemukan:\n";
