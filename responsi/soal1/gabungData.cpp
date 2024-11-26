@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void mergeData(const int* list1, int size1, const int* list2, int size2, int* mergeList){
+void mergeData(int* list1, int size1, int* list2, int size2, int* mergeList){
     int i = 0, j = 0, k = 0;
 
     while (i<size1 && j<size2){
@@ -21,10 +21,10 @@ void mergeData(const int* list1, int size1, const int* list2, int size2, int* me
 }
 
 int main(){
-    const int list1[] = {2, 4, 6, 8};
-    const int list2[] = {1, 3, 5, 7};
-    const int size1 = sizeof(list1)/sizeof(list1[0]);
-    const int size2 = sizeof(list2)/sizeof(list2[0]);
+    int list1[] = {2, 4, 6, 8};
+    int list2[] = {1, 3, 5, 7};
+    int size1 = sizeof(list1)/sizeof(list1[0]);
+    int size2 = sizeof(list2)/sizeof(list2[0]);
 
     int mergeList[size1+size2];
     mergeData(list1, size1, list2, size2, mergeList);
