@@ -4,6 +4,7 @@ using namespace std;
 
 int main(){
     string s;
+    cout<<"Masukkan kalimat: ";
     getline(cin, s);
     //s = "Freta Yordinia Laura";
     
